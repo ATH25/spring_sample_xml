@@ -9,6 +9,14 @@ public class CustomerServiceImpl implements CustomerService {
 
 	private CustomerRepository customerRepository;
 
+	public CustomerServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public CustomerServiceImpl(CustomerRepository customerRepository) {
+		this.customerRepository = customerRepository;
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -20,7 +28,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public void setCustomerRepository(CustomerRepository customerRepository) {
+		System.out.println("inside setCustomerRepository ::::::::");
 		this.customerRepository = customerRepository;
 	}
-
+	
 }
