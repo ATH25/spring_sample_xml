@@ -14,6 +14,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 	
 	public CustomerServiceImpl(CustomerRepository customerRepository) {
+		System.out.println("::::: Inside the constructor: CustomerServiceImpl");
 		this.customerRepository = customerRepository;
 	}
 	
