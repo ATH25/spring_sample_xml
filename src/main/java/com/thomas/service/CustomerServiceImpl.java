@@ -29,7 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public void setCustomerRepository(CustomerRepository customerRepository) {
-		System.out.println("inside setCustomerRepository ::::::::");
+		System.out.println("inside CustomerServiceImpl.setCustomerRepository ::::::::");
 		this.customerRepository = customerRepository;
 	}
 	
