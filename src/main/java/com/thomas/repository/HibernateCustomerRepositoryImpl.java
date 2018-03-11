@@ -3,6 +3,8 @@ package com.thomas.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import com.thomas.model.Customer;
 
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
@@ -11,11 +13,12 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 	 * @see com.thomas.repository.CustomerRepository#findAll()
 	 */
 	
+	@Value("${dbUsername}")
 	private String dbUsername;
 	
-	public void setdbUsername(String dbUsername) {
+/*	public void setdbUsername(String dbUsername) {
 		this.dbUsername = dbUsername;
-	} 
+	} */
 	
 	@Override
 	public List<Customer> findAll(){

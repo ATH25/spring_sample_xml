@@ -5,10 +5,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<context:property-placeholder location="app.properties"/> <!-- This will load the properties file with the name specified -->
+	<!-- <context:property-placeholder location="app.properties"/> --> <!-- This will load the properties file with the name specified -->
+	<context:annotation-config />
 	
 	<bean name="customerRepository" class="com.thomas.repository.HibernateCustomerRepositoryImpl">
-		<property name="dbUsername" value="${dbUsername}"/> 
+		<!-- <property name="dbUsername" value="${dbUsername}"/>  -->
 	</bean>
 	
 	<bean name="customerRepository2" class="com.thomas.repository.HibernateCustomerRepositoryImpl" />
