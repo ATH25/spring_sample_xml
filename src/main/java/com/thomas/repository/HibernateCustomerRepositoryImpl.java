@@ -10,8 +10,16 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 	/* (non-Javadoc)
 	 * @see com.thomas.repository.CustomerRepository#findAll()
 	 */
+	
+	private String dbUsername;
+	
+	public void setdbUsername(String dbUsername) {
+		this.dbUsername = dbUsername;
+	} 
+	
 	@Override
 	public List<Customer> findAll(){
+		System.out.println("dbUsername :" + dbUsername);
 		
 		List<Customer> customers = new ArrayList<>();
 		Customer customer = new Customer();

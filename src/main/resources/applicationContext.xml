@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean name="customerRepository" class="com.thomas.repository.HibernateCustomerRepositoryImpl" />
+	<context:property-placeholder location="app.properties"/> <!-- This will load the properties file with the name specified -->
+	
+	<bean name="customerRepository" class="com.thomas.repository.HibernateCustomerRepositoryImpl">
+		<property name="dbUsername" value="${dbUsername}"/> 
+	</bean>
+	
 	<bean name="customerRepository2" class="com.thomas.repository.HibernateCustomerRepositoryImpl" />
 	<bean name="onlineCustomerRepository" class="com.thomas.repository.HibernateOnlineCustomerRepositoryImpl" />
 	
 	<!-- <bean name="customerService" class="com.thomas.service.CustomerServiceImpl" autowire="constructor"> --> <!-- With autowire by constructor enabled, you can leave the constructor property unset. Spring will find the compatible data type and wire it automatcailly. -->
- 	<bean name="customerService" class="com.thomas.service.CustomerServiceImpl" autowire="byName">
+ 	<bean name="customerService" class="com.thomas.service.CustomerServiceImpl" autowire="byName" scope="prototype">
 		<!-- <property name="customerRepository" ref ="customerRepository"/> -->
 		<!-- <constructor-arg index="0" ref="customerRepository"/> -->
 	</bean>

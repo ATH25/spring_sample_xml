@@ -11,6 +11,7 @@ public class HibernateOnlineCustomerRepositoryImpl implements OnlineCustomerRepo
 	/* (non-Javadoc)
 	 * @see com.thomas.repository.CustomerRepository#findAll()
 	 */
+	
 	@Override
 	public List<OnlineCustomer> findAll(){
 		
